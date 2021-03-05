@@ -155,3 +155,5 @@ float NaturalLogarithm(float num1)
 //? Matrix addition, substaction, multiplication and division.
 
 //! Matrix declaration
+
+float matrix1[4][4];

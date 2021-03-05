@@ -11,7 +11,7 @@ float main()
   printf("\t\t Calculadora Cientifica.\n");
 
   printf("Ingresa la operacion deseada a realizar.\n");
-  printf("1.- Suma\t\t          2.- Resta\n");
+  printf("1.- Suma\t\t         2.- Resta\n");
   printf("3.- Multiplicacion\t 4.- Division\n");
   printf("5.- Raiz cuadrada\t  6.- Elevacion de un numero\n");
   printf("7.- Funcion trigonometrica\t 8.- Logaritmo de un numero\n");
@@ -38,12 +38,12 @@ float main()
   case 4:
     printf("Ingresa dos numeros a dividir.\n");
     scanf("%f%f", &numberOne, &numberTwo);
-    printf("El resultado de la division, es: %.2f", Divide(numberOne, numberTwo));
+    printf("El resultado de la division, es: %.2f\n", Divide(numberOne, numberTwo));
     break;
   case 5:
     printf("Ingresa el numero a sacar raiz.\n");
     scanf("%f", &numberOne);
-    printf("La raiz cuadrada del numero, es: %.2f", Square_Root(numberOne));
+    printf("La raiz cuadrada del numero, es: %.2f\n", Square_Root(numberOne));
     break;
 
   // ? Tipos de elevacion
@@ -130,10 +130,10 @@ float main()
   case 9:
     break;
   default:
-    printf("Esa operacion no esta disponible o ingresaste una no valida, intenta de nuevo.");
+    printf("Esa operacion no esta disponible o ingresaste una no valida, intenta de nuevo.\n");
     break;
   }
 
-  system("pause");
+  system("\npause");
   return 0;
 }
