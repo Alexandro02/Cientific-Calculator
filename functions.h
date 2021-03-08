@@ -154,6 +154,62 @@ float NaturalLogarithm(float num1)
 
 //? Matrix addition, substaction, multiplication and division.
 
-//! Matrix declaration
+int MatrixAddition()
+{
+  int matrix1[100][100], matrix2[100][100], sum[100][100];
+  int i, j, rws, clms;
 
-float matrix1[4][4];
+  //! Getting values.
+
+  printf("Introduce las filas de las matrices: \n");
+  scanf("%i", &rws);
+  printf("Introduce las columnas de las matrices: \n");
+  scanf("%i", &clms);
+
+  printf("\nIntroduce los datos de la primer matriz: \n");
+
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("\nIntroduce el elemento: [%d][%d]", i, j);
+      scanf("%d", &matrix1[i][j]);
+    }
+  }
+  printf("\nIntroduce los datos de la segunda matriz:\n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("\nIntroduce el elemento: [%d][%d]", i, j);
+      scanf("%d", &matrix2[i][j]);
+    }
+  }
+
+  //! Matrix addition
+
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      sum[i][j] = matrix1[i][j] + matrix2[i][j];
+    }
+  }
+
+  //! Print result
+
+  printf("\nEl resultado de la suma, es: \n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("%d", sum[i][j]);
+      if (j == clms - 1)
+      {
+        printf("\n");
+      }
+    }
+  }
+
+  return sum[i][j];
+}

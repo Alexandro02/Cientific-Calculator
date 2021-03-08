@@ -4,8 +4,10 @@
 
 float main()
 {
+  //! MAIN PROGRAM
   float numberOne, numberTwo;
   int op;
+  //! ELEVATION
   int tipe;
 
   printf("\t\t Calculadora Cientifica.\n");
@@ -15,6 +17,7 @@ float main()
   printf("3.- Multiplicacion\t 4.- Division\n");
   printf("5.- Raiz cuadrada\t  6.- Elevacion de un numero\n");
   printf("7.- Funcion trigonometrica\t 8.- Logaritmo de un numero\n");
+  printf("9.- Suma de matrices\t\n");
   scanf("%i", &op);
 
   // ? Operaciones basicas
@@ -128,9 +131,10 @@ float main()
     printf("El logaritmo del numero, es: %.2f\n", NaturalLogarithm(numberOne));
     break;
   case 9:
+    printf("", MatrixAddition(), "\n");
     break;
   default:
-    printf("Esa operacion no esta disponible o ingresaste una no valida, intenta de nuevo.\n");
+    printf("\nEsa operacion no esta disponible o ingresaste una no valida, intenta de nuevo.\n");
     break;
   }
 
