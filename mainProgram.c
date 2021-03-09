@@ -10,14 +10,14 @@ float main()
   //! ELEVATION
   int tipe;
 
-  printf("\t\t Calculadora Cientifica.\n");
+  printf("\n\t\t Calculadora Cientifica.\n");
 
   printf("Ingresa la operacion deseada a realizar.\n");
   printf("1.- Suma\t\t         2.- Resta\n");
-  printf("3.- Multiplicacion\t 4.- Division\n");
-  printf("5.- Raiz cuadrada\t  6.- Elevacion de un numero\n");
+  printf("3.- Multiplicacion\t\t 4.- Division\n");
+  printf("5.- Raiz cuadrada\t\t 6.- Elevacion de un numero\n");
   printf("7.- Funcion trigonometrica\t 8.- Logaritmo de un numero\n");
-  printf("9.- Suma de matrices\t\n");
+  printf("9.- Matrices.\t\n");
   scanf("%i", &op);
 
   // ? Operaciones basicas
@@ -82,9 +82,9 @@ float main()
   // ? Funciones trigonometricas
   case 7:
     printf("Elige el tipo de funcion a usar.\n");
-    printf("1.- Seno\t     2.- Coseno \n");
-    printf("3.- Tangente\t 4.-Cosecante\n");
-    printf("5.- Secante\t  6.- Cotangente\n");
+    printf("1.- Seno       2.- Coseno \n");
+    printf("3.- Tangente   4.-Cosecante\n");
+    printf("5.- Secante    6.- Cotangente\n");
     scanf("%i", &tipe);
 
     switch (tipe)
@@ -120,7 +120,7 @@ float main()
       printf("La cotangente del numero, es: %.2f\n", Cotangent(numberOne));
       break;
     default:
-      printf("Operacion invalida.");
+      printf("Operacion invalida.\n");
       break;
     }
     break;
@@ -130,8 +130,27 @@ float main()
     scanf("%f", &numberOne);
     printf("El logaritmo del numero, es: %.2f\n", NaturalLogarithm(numberOne));
     break;
+    //? Matrix
   case 9:
-    printf("", MatrixAddition(), "\n");
+    printf("\t\t Selecciona la operacion de matrices deseada: \n");
+    printf("1.- Suma de matrices.\t\t 2.- Resta de matrices.\n");
+    printf("4.- Multiplicacion de matrices.\t 5.- Division de matrices.\n");
+    printf("\t \n");
+    scanf("%i", &tipe);
+
+    switch (tipe)
+    {
+    case 1:
+      printf(" ", MatrixAddition());
+      break;
+    case 2:
+      printf(" ", MatrixSubstraction());
+      break;
+
+    default:
+      break;
+    }
+
     break;
   default:
     printf("\nEsa operacion no esta disponible o ingresaste una no valida, intenta de nuevo.\n");

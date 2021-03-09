@@ -154,10 +154,11 @@ float NaturalLogarithm(float num1)
 
 //? Matrix addition, substaction, multiplication and division.
 
+int matrix1[100][100], matrix2[100][100], sum[100][100], subst[100][100], mult[100][100], div[100][100];
+int i, j, rws, clms;
+
 int MatrixAddition()
 {
-  int matrix1[100][100], matrix2[100][100], sum[100][100];
-  int i, j, rws, clms;
 
   //! Getting values.
 
@@ -212,4 +213,114 @@ int MatrixAddition()
   }
 
   return sum[i][j];
+}
+
+int MatrixSubstraction()
+{
+  //! Get values
+
+  printf("Introduce las filas de las matrices: \n");
+  scanf("%i", &rws);
+  printf("Introduce las columnas de las matrices: \n");
+  scanf("%i", &clms);
+
+  printf("Ingresa los valores de la primer matriz:\n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("Ingresa el elemento [%d][%d]", i, j);
+      scanf("%d", &matrix1[i][j]);
+    }
+  }
+  printf("Ingresa los valores de la segunda matriz:\n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("Ingresa el elemento [%d][%d]", i, j);
+      scanf("%d", &matrix2[i][j]);
+    }
+  }
+
+  //! Matrix substraction
+
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      subst[i][j] = matrix1[i][j] - matrix2[i][j];
+    }
+  }
+
+  //! Print result
+
+  printf("\nEl resultado de la resta, es: \n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      printf("%d", subst[i][j]);
+      if (j == clms - 1)
+      {
+        printf("\n");
+      }
+    }
+  }
+  return subst[i][j];
+}
+
+int MatrixMultip()
+{
+  //! Getting values
+
+  printf("Introduce las filas de las matrices: \n");
+  scanf("%i", &rws);
+  printf("Introduce las columnas de las matrices: \n");
+  scanf("%i", &clms);
+
+  printf("Ingresa los datos de la primer matriz:\n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; i < clms; j++)
+    {
+      printf("Ingresa el elemento [%d][%d]", i, j);
+      scanf("%d", &matrix1[i][j]);
+    }
+  }
+  printf("Ingresa los datos de la segunda matriz:\n");
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; i < clms; j++)
+    {
+      printf("Ingresa el elemento [%d][%d]", i, j);
+      scanf("%d", &matrix2[i][j]);
+    }
+  }
+
+  //! Matrix multiplication
+
+  for (i = 0; i < rws; i++)
+  {
+    for (j = 0; j < clms; j++)
+    {
+      mult[i][j] = matrix1[i][j] * matrix2[i][j];
+    }
+  }
+
+  //! Print result
+
+  for (i = 0; i < rws; i++)
+  {
+    for (i = 0; i < clms; i++)
+    {
+      printf("%d", mult[i][j]);
+      if (j == clms - 1)
+      {
+        printf("\n");
+      }
+    }
+  }
+
+  return mult[i][j];
 }
