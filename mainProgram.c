@@ -134,7 +134,7 @@ float main()
   case 9:
     printf("\t\t Selecciona la operacion de matrices deseada: \n");
     printf("1.- Suma de matrices.\t\t 2.- Resta de matrices.\n");
-    printf("4.- Multiplicacion de matrices.\t 5.- Division de matrices.\n");
+    printf("3.- Multiplicacion de matrices.");
     printf("\t \n");
     scanf("%i", &tipe);
 
@@ -146,8 +146,11 @@ float main()
     case 2:
       printf(" ", MatrixSubstraction());
       break;
-
+    case 3:
+      printf(" ", MatrixMultip());
+      break;
     default:
+      printf("Operacion no valida.");
       break;
     }
 

@@ -154,9 +154,10 @@ float NaturalLogarithm(float num1)
 
 //? Matrix addition, substaction, multiplication and division.
 
-int matrix1[100][100], matrix2[100][100], sum[100][100], subst[100][100], mult[100][100], div[100][100];
+int matrix1[100][100], matrix2[100][100], sum[100][100], subst[100][100], mult[100][100];
 int i, j, rws, clms;
 
+//? Matrix addition.
 int MatrixAddition()
 {
 
@@ -215,6 +216,7 @@ int MatrixAddition()
   return sum[i][j];
 }
 
+//? Matrix substraction.
 int MatrixSubstraction()
 {
   //! Get values
@@ -270,6 +272,7 @@ int MatrixSubstraction()
   return subst[i][j];
 }
 
+//? Matrix multiplication
 int MatrixMultip()
 {
   //! Getting values
@@ -282,16 +285,17 @@ int MatrixMultip()
   printf("Ingresa los datos de la primer matriz:\n");
   for (i = 0; i < rws; i++)
   {
-    for (j = 0; i < clms; j++)
+    for (j = 0; j < clms; j++)
     {
       printf("Ingresa el elemento [%d][%d]", i, j);
       scanf("%d", &matrix1[i][j]);
     }
   }
+
   printf("Ingresa los datos de la segunda matriz:\n");
   for (i = 0; i < rws; i++)
   {
-    for (j = 0; i < clms; j++)
+    for (j = 0; j < clms; j++)
     {
       printf("Ingresa el elemento [%d][%d]", i, j);
       scanf("%d", &matrix2[i][j]);
@@ -310,9 +314,10 @@ int MatrixMultip()
 
   //! Print result
 
+  printf("El resultado de la multiplicacion, es:\n");
   for (i = 0; i < rws; i++)
   {
-    for (i = 0; i < clms; i++)
+    for (j = 0; j < clms; j++)
     {
       printf("%d", mult[i][j]);
       if (j == clms - 1)
