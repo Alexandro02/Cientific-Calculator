@@ -141,8 +141,8 @@ float Cotangent(float num1)
 
   return cotangent;
 }
-//? Logarithmic functions
 
+//? Logarithmic functions
 float NaturalLogarithm(float num1)
 {
   float Log;
@@ -150,6 +150,29 @@ float NaturalLogarithm(float num1)
   Log = log(num1);
 
   return Log;
+}
+float Base10Logarithm(float num1)
+{
+  float loga10;
+
+  loga10 = log10(num1);
+
+  return loga10;
+}
+
+//* Porcentaje
+
+float Porcentage(float num1, float num2)
+{
+  float percentage;
+  printf("Ingresa la cantidad a sacar porcentaje y el porcentaje a sacar: \n");
+  scanf("%f%f", &num1, &num2);
+
+  percentage = (num1 * num2) / 100;
+
+  printf("El porcentaje de %.2f, es: \n%.2f", num1, num2);
+
+  return percentage;
 }
 
 //? Matrix addition, substaction, multiplication and division.
