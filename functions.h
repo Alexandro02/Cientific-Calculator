@@ -160,6 +160,25 @@ float Base10Logarithm(float num1)
   return loga10;
 }
 
+//* Factorial
+
+int Factorial()
+{
+  int fact = 1, i, num;
+
+  printf("Ingresa un numero a obtener su factorial\n");
+  scanf("%d", &num);
+
+  for (i = num; i > 1; i--)
+  {
+    fact *= i;
+  }
+
+  printf("El factorial de %i, es: %i", num, fact);
+
+  return fact;
+}
+
 //* Porcentaje
 
 float Porcentage(float num1, float num2)

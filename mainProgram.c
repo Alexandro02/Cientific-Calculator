@@ -20,7 +20,7 @@ int main()
     printf("5.- Raiz cuadrada\t\t 6.- Elevacion de un numero\n");
     printf("7.- Funcion trigonometrica\t 8.- Logaritmo de un numero\n");
     printf("9.- Matrices.\t\t\t 10.- Porcentaje.\n");
-    printf("0.- Salir\n");
+    printf("11.- Factorial\t\t\t 0.- Salir\n");
     scanf("%i", &op);
 
     // ? Operaciones basicas
@@ -219,6 +219,11 @@ int main()
       break;
     case 10:
       printf("\n", Porcentage(numberOne, numberTwo));
+      system("\npause");
+      system("cls");
+      break;
+    case 11:
+      printf("\n", Factorial());
       system("\npause");
       system("cls");
       break;
