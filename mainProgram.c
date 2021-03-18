@@ -161,8 +161,7 @@ int main()
     case 9:
       printf("\t\t Selecciona la operacion de matrices deseada: \n");
       printf("1.- Suma de matrices.\t\t 2.- Resta de matrices.\n");
-      printf("3.- Multiplicacion de matrices.");
-      printf("\t \n");
+      printf("3.- Multiplicacion de matrices.\t 4.- Resolver mediante metodo montante.\n");
       scanf("%i", &tipe);
 
       switch (tipe)
@@ -179,6 +178,11 @@ int main()
         break;
       case 3:
         printf("", MatrixMultip());
+        system("\npause");
+        system("cls");
+        break;
+      case 4:
+        printf("", MontanteMethodMatrix());
         system("\npause");
         system("cls");
         break;
