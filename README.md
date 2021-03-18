@@ -15,3 +15,6 @@ This is a proyect for med term and final term "exams"
 
 ## March 1st
 - Added matrix sum, multiplication and substraction, also log base 10, percentage and a number factorial.
+
+## March 18th
+- Fixed bugs, improved code and made it more clean.
