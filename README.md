@@ -19,3 +19,6 @@ This is a proyect for med term and final term "exams"
 ## March 18th
 - Fixed bugs, improved code and made it more clean.
 - Added montante method for matrix (pending bug).
+
+## March 23th 
+- Fixed Montante method bug
