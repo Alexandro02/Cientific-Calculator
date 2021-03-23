@@ -182,7 +182,7 @@ int main()
         system("cls");
         break;
       case 4:
-        printf("", MontanteMethodMatrix());
+        printf("", MontanteMethod());
         system("\npause");
         system("cls");
         break;

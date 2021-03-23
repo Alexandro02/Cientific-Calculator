@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 // ? Funciones de calculadora básicas
 //* Suma
@@ -332,7 +333,7 @@ int MatrixAddition()
 
   //! Print result
 
-  printf("\nMatriz A + Matriz B = \n");
+  printf("\nMatriz A + Martix B = \n");
   for (i = 0; i < rws; i++)
   {
     for (j = 0; j < clms; j++)
@@ -389,7 +390,7 @@ int MatrixSubstraction()
 
   //! Print result
 
-  printf("\nMatriz A - Matriz B = \n");
+  printf("\nMatriz A - Martix B = \n");
   for (i = 0; i < rws; i++)
   {
     for (j = 0; j < clms; j++)
@@ -446,7 +447,7 @@ int MatrixMultip()
 
   //! Print result
 
-  printf("Matriz A x Matriz B es = \n");
+  printf("Martix A x Martix B es = \n");
   for (i = 0; i < rws; i++)
   {
     for (j = 0; j < clms; j++)
@@ -462,147 +463,75 @@ int MatrixMultip()
   return mult[i][j];
 }
 
-//! METODO MONTANTE PARA MATRICES. PENDING FIX BUG.
+//! METODO MONTANTE PARA MATRICES. CRASH(?).
 
-//? funciones necesarias.
+#define R 3
+#define C 4
 
-#include <stdio.h>
-#define Size 3
-//* La variable Size controla el numero de ecuaciones del sistema, se puede cambiar
-
-//* Prototipos de funciones
-void Recieve(int Arreglo[][2 * Size + 1]);
-void Printing(int Array[][2 * Size + 1]);
-void Calculating(int C[][2 * Size + 1]);
-
-int MontanteMethodMatrix()
+int MontanteMethod(void)
 {
 
-  int i, j;
+  int i, j, number[R][C], matrix[R][C], pivote, pivant = 1, iteration = 0;
 
-  //* Se define una matriz que incluye la matriz de coeficientes, la unidad de
-  //* Size X Size y los terminos independientes del sistema
-  int Matrix[Size][2 * Size + 1] = {{0, 0}};
-
-  Recieve(Matrix);
-
-  Printing(Matrix);
-
-  Calculating(Matrix);
-
-  Printing(Matrix);
-
-  //* Se imprime el determinante
-  printf("\n\nEl determinante de la matriz es: %d\n", Matrix[0][0]);
-
-  //* Se imprime la matriz inversa
-  printf("\n\n\nEsta es la matriz inversa:\n \n");
-
-  for (j = 0; j < Size; j++)
+  //? Obteniendo variables
+  for (i = 0; i < R; i++)
   {
-    for (i = Size; i < 2 * Size; i++)
+    for (j = 0; j < C - 1; j++)
     {
-      printf("\t[%3d]\t", Matrix[j][i]);
+      printf("Los valores de la matrix [%d][%d]= ", i + 1, j + 1);
+      scanf("%d", &matrix[i][j]);
     }
-
-    printf("\n");
-
-    if (Size / 2 - 1 == j)
-      printf("\n(1/%d)", Matrix[0][0]);
+    printf("El costo fue----------------> ");
+    scanf("%d", &matrix[i][j]);
   }
 
-  //* Se imprime la solucion del sistema
-  printf("\n\n\nSoluciones del sistema.");
-  printf(" Los numeros de la izquierda se refieren a la variable. \n");
-  for (i = 0; i < Size; i++)
+  while (iteration < R)
   {
-    printf("[%3d]\t = [%6d]/[%d]\n", i + 1, Matrix[i][2 * Size], Matrix[0][0]);
-  }
-  return 0;
-}
-
-//?FUNCION RECIBE
-
-void Recieve(int Arreglo[][2 * Size + 1])
-{
-
-  int i, j, k, l, m;
-
-  //* Este par de ciclos reciben los coeficientes del sistema
-  printf("\nIngrese los coeficientes: \n");
-  for (i = 0; i < Size; i++)
-    for (j = 0; j < Size; j++)
+    pivote = matrix[iteration][iteration];
+    for (i = 0; i < C; i++)
     {
-      printf("\nIntroduzca el coeficiente %d de la ecuacion %d: ", j + 1, i + 1);
-      scanf("%d", &Arreglo[i][j]);
+      number[iteration][i] = matrix[iteration][i];
     }
-
-  //* Adiciona la matriz unidad de Size x Size
-  for (k = 0; k < Size; k++)
-  {
-    Arreglo[k][Size + k] = 1;
-  }
-  //* Este ciclo recibe los terminos independientes
-  printf("\nIngresa los terminos independientes: \n");
-  for (m = 0; m < Size; m++)
-  {
-    printf("\nIntroduzca el termino independiente de la ecuacion %d: ", m + 1);
-    scanf("%d", &Arreglo[m][2 * Size]);
-  }
-}
-
-//* Impresion de resultados.
-
-void Printing(int Array[][2 * Size + 1])
-{
-  int i, j;
-  printf("\n\n");
-  for (i = 0; i < Size; i++)
-  {
-    for (j = 0; j < 2 * Size + 1; j++)
+    for (i = 0; i < R; i++)
     {
-      printf("[%3d]\t", Array[i][j]);
-    }
-    printf("\n");
-  }
-}
-
-//* Calculando resultados.
-
-void Calculating(int C[][2 * Size + 1])
-{
-  //* Se definen el pivote anterior y actual.
-
-  int B[Size][2 * Size + 1];
-  int pant = 1; //* Al inicio pant = 1
-  int pact;
-  int i = 0, l, k, j, s, t;
-
-  //* El pivote toma valores de la diagonal
-  for (i = 0; i < Size; i++)
-  {
-    pact = C[i][i];
-    //? Control de filas y columnas
-    for (l = 0; l < 2 * Size + 1; l++)
-      for (k = 0; k < Size; k++)
+      if (iteration != i)
       {
-        //* Se deja intacto el renglon del pivote.
-        if (k != i)
+        number[i][iteration] = 0;
+      }
+    }
+    for (i = 0; i < R; i++)
+    {
+      for (j = 0; j < C; j++)
+      {
+        if (i != iteration)
         {
-          B[k][l] = ((C[i][i] * C[k][l]) - (C[k][i] * C[i][l])) / pant;
-        }
-        //* Valores de matrices
-        for (s = 0; s < Size; s++)
-        {
-          for (t = 0; t < 2 * Size + 1; t++)
+          if (j != iteration)
           {
-            //* Como en pivote no se modifica, no se asigna en la variable original
-            if (s != i)
-              C[s][t] = B[s][t];
+            number[i][j] = (((matrix[i][j] * pivote) - (matrix[iteration][j] * matrix[i][iteration])) / pivant);
           }
         }
-        //* pact cambia de valor
-        pant = pact;
       }
+    }
+
+    iteration++;
+    pivant = pivote;
+    for (i = 0; i < R; i++)
+    {
+      for (j = 0; j < C; j++)
+      {
+        matrix[i][j] = number[i][j];
+      }
+    }
   }
+  printf("\n\n");
+  for (i = 0; i < R; i++)
+  {
+    printf("\t");
+    for (j = 0; j < C - 1; j++)
+    {
+      printf("\t[%d]", matrix[i][j]);
+    }
+    printf("\t= [%d]\n", matrix[i][j]);
+  }
+  return 0;
 }
