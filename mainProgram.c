@@ -1,6 +1,6 @@
-#include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "functions.h"
 
 int main()
 {
@@ -32,27 +32,27 @@ int main()
       return 0;
       break;
     case 1:
-      printf("", Add());
+      Add();
       system("\npause");
       system("cls");
       break;
     case 2:
-      printf("", Subtraction(numberOne, numberTwo));
+      Subtraction(numberOne, numberTwo);
       system("\npause");
       system("cls");
       break;
     case 3:
-      printf("", Multiply(numberOne, numberTwo));
+      Multiply(numberOne, numberTwo);
       system("\npause");
       system("cls");
       break;
     case 4:
-      printf("", Divide(numberOne, numberTwo));
+      Divide(numberOne, numberTwo);
       system("\npause");
       system("cls");
       break;
     case 5:
-      printf("", Square_Root(numberOne));
+      Square_Root(numberOne);
       system("\npause");
       system("cls");
       break;
@@ -68,17 +68,17 @@ int main()
       switch (tipe)
       {
       case 1:
-        printf("", Square_Elevation(numberOne));
+        Square_Elevation(numberOne);
         system("\npause");
         system("cls");
         break;
       case 2:
-        printf("", Cube_Elevation(numberOne));
+        Cube_Elevation(numberOne);
         system("\npause");
         system("cls");
         break;
       case 3:
-        printf("", Fourth_Elevation(numberOne));
+        Fourth_Elevation(numberOne);
         system("\npause");
         system("cls");
         break;
@@ -98,32 +98,32 @@ int main()
       switch (tipe)
       {
       case 1:
-        printf("", Sine(numberOne));
+        Sine(numberOne);
         system("\npause");
         system("cls");
         break;
       case 2:
-        printf("", Cosen(numberOne));
+        Cosen(numberOne);
         system("\npause");
         system("cls");
         break;
       case 3:
-        printf("", Tangent(numberOne));
+        Tangent(numberOne);
         system("\npause");
         system("cls");
         break;
       case 4:
-        printf("", Cosecant(numberOne));
+        Cosecant(numberOne);
         system("\npause");
         system("cls");
         break;
       case 5:
-        printf("", Secant(numberOne));
+        Secant(numberOne);
         system("\npause");
         system("cls");
         break;
       case 6:
-        printf("", Cotangent(numberOne));
+        Cotangent(numberOne);
         system("\npause");
         system("cls");
         break;
@@ -141,12 +141,12 @@ int main()
       switch (tipe)
       {
       case 1:
-        printf("", NaturalLogarithm(numberOne));
+        NaturalLogarithm(numberOne);
         system("\npause");
         system("cls");
         break;
       case 2:
-        printf("", Base10Logarithm(numberOne));
+        Base10Logarithm(numberOne);
         system("\npause");
         system("cls");
         break;
@@ -167,37 +167,37 @@ int main()
       switch (tipe)
       {
       case 1:
-        printf("", MatrixAddition());
+        MatrixAddition();
         system("\npause");
         system("cls");
         break;
       case 2:
-        printf("", MatrixSubstraction());
+        MatrixSubstraction();
         system("\npause");
         system("cls");
         break;
       case 3:
-        printf("", MatrixMultip());
+        MatrixMultip();
         system("\npause");
         system("cls");
         break;
-      case 4:
-        printf("", MontanteMethod());
+      /* case 4:
+        MontanteMethod();
         system("\npause");
         system("cls");
-        break;
+        break; */
       default:
         printf("Operacion no valida.");
         break;
       }
       break;
     case 10:
-      printf("\n", Porcentage(numberOne, numberTwo));
+      Porcentage(numberOne, numberTwo);
       system("\npause");
       system("cls");
       break;
     case 11:
-      printf("\n", Factorial());
+      Factorial();
       system("\npause");
       system("cls");
       break;

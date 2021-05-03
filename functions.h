@@ -27,9 +27,9 @@ float Subtraction(float num1, float num2)
 {
   float subt = 0;
 
-  printf("Ingresa el valor a restar numero 1: ");
+  printf("Ingresa el primer numero: ");
   scanf("%f", &num1);
-  printf("Ingresa el valor a restar numero 2: ");
+  printf("Ingresa el segundo numero: ");
   scanf("%f", &num2);
 
   subt = num1 - num2;
@@ -463,9 +463,9 @@ int MatrixMultip()
   return mult[i][j];
 }
 
-//! METODO MONTANTE PARA MATRICES. CRASH(?).
+//? Metodo montante
 
-#define R 3
+/* # define R 3
 #define C 4
 
 int MontanteMethod(void)
@@ -534,4 +534,4 @@ int MontanteMethod(void)
     printf("\t= [%d]\n", matrix[i][j]);
   }
   return 0;
-}
+} */
