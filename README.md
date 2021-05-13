@@ -24,4 +24,4 @@ This is a proyect for med term and final term "exams"
 - Fixed Montante method bug
 
 ## May 13th
-- Removed Montante methoddue to a malfunctionning bug.
+- Removed Montante methoddue to a malfunctionning bugs.
