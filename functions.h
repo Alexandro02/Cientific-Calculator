@@ -286,7 +286,7 @@ float Porcentage(float num1, float num2)
   return percentage;
 }
 
-//? Matrix addition, substaction, multiplication and division.
+//? Matrix addition, substaction and multiplication.
 
 int matrix1[100][100], matrix2[100][100], sum[100][100], subst[100][100], mult[100][100];
 int i, j, rws, clms;
@@ -462,76 +462,3 @@ int MatrixMultip()
 
   return mult[i][j];
 }
-
-//? Metodo montante
-
-/* # define R 3
-#define C 4
-
-int MontanteMethod(void)
-{
-
-  int i, j, number[R][C], matrix[R][C], pivote, pivant = 1, iteration = 0;
-
-  //? Obteniendo variables
-  for (i = 0; i < R; i++)
-  {
-    for (j = 0; j < C - 1; j++)
-    {
-      printf("Los valores de la matrix [%d][%d]= ", i + 1, j + 1);
-      scanf("%d", &matrix[i][j]);
-    }
-    printf("El costo fue----------------> ");
-    scanf("%d", &matrix[i][j]);
-  }
-
-  while (iteration < R)
-  {
-    pivote = matrix[iteration][iteration];
-    for (i = 0; i < C; i++)
-    {
-      number[iteration][i] = matrix[iteration][i];
-    }
-    for (i = 0; i < R; i++)
-    {
-      if (iteration != i)
-      {
-        number[i][iteration] = 0;
-      }
-    }
-    for (i = 0; i < R; i++)
-    {
-      for (j = 0; j < C; j++)
-      {
-        if (i != iteration)
-        {
-          if (j != iteration)
-          {
-            number[i][j] = (((matrix[i][j] * pivote) - (matrix[iteration][j] * matrix[i][iteration])) / pivant);
-          }
-        }
-      }
-    }
-
-    iteration++;
-    pivant = pivote;
-    for (i = 0; i < R; i++)
-    {
-      for (j = 0; j < C; j++)
-      {
-        matrix[i][j] = number[i][j];
-      }
-    }
-  }
-  printf("\n\n");
-  for (i = 0; i < R; i++)
-  {
-    printf("\t");
-    for (j = 0; j < C - 1; j++)
-    {
-      printf("\t[%d]", matrix[i][j]);
-    }
-    printf("\t= [%d]\n", matrix[i][j]);
-  }
-  return 0;
-} */

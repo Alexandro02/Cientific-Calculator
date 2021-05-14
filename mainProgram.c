@@ -8,7 +8,7 @@ int main()
   float numberOne, numberTwo;
   int op, start;
   //! ELEVATION
-  int tipe;
+  int type;
 
   for (start = 0; start >= 0; start++)
   {
@@ -63,9 +63,9 @@ int main()
       printf("1.- Elevacion al cuadrado\n");
       printf("2.- Elevacion al cubo\n");
       printf("3.- Elevacion a la cuarta\n");
-      scanf("%i", &tipe);
+      scanf("%i", &type);
 
-      switch (tipe)
+      switch (type)
       {
       case 1:
         Square_Elevation(numberOne);
@@ -93,9 +93,9 @@ int main()
       printf("1.- Seno       2.- Coseno \n");
       printf("3.- Tangente   4.-Cosecante\n");
       printf("5.- Secante    6.- Cotangente\n");
-      scanf("%i", &tipe);
+      scanf("%i", &type);
 
-      switch (tipe)
+      switch (type)
       {
       case 1:
         Sine(numberOne);
@@ -136,9 +136,9 @@ int main()
     case 8:
       printf("Ingresa el tipo de logaritmo deseado:\n");
       printf("1.- Logaritmo natural\t 2.- Logaritmo base 10\n");
-      scanf("%i", &tipe);
+      scanf("%i", &type);
 
-      switch (tipe)
+      switch (type)
       {
       case 1:
         NaturalLogarithm(numberOne);
@@ -161,10 +161,10 @@ int main()
     case 9:
       printf("\t\t Selecciona la operacion de matrices deseada: \n");
       printf("1.- Suma de matrices.\t\t 2.- Resta de matrices.\n");
-      printf("3.- Multiplicacion de matrices.\t 4.- Resolver mediante metodo montante.\n");
-      scanf("%i", &tipe);
+      printf("3.- Multiplicacion de matrices.\n");
+      scanf("%i", &type);
 
-      switch (tipe)
+      switch (type)
       {
       case 1:
         MatrixAddition();
