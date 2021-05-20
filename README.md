@@ -1,4 +1,4 @@
-# Cientific-Calculator
+# Scientific-Calculator
 
 |Alexandro Espino Leal||alexx1098@outlook.es|
 
